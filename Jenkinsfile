@@ -22,7 +22,7 @@ pipeline {
                 echo 'Updating Apache web directory...'
                 // Syncs repo files directly into Apache's document root
                 // Excludes git internal files from the web root
-                sh 'rsync -av --exclude=".git*" --exclude="Jenkinsfile" ./ /var/www/html/'
+                sh 'rsync -rltDv --exclude=".git*" --exclude="Jenkinsfile" ./ /var/www/html/'
             }
         }
 
